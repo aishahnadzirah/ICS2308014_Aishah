@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MENTOR</h1>
+    <form action="" method="post">
+        {%csrf_token %}
+        Enter Mentor ID <input type="text" name="id"><br><br>
+        Enter Mentor Name <input type="text" name="name"><br><br>
+        Enter Mentor Room Number <input type="text" name="no"><br><br>
+        <input type="submit" value="SUBMIT"><br><br>
+    </form>
+    <br><br>
+    {{message}}
+
+    <table border="1">
+        {% for y in data%}
+        <tr>
+            <th>Mentor ID</th>
+            <th>Mentor Name</th>
+            <th>Room Number</th>
+        </tr>
+        <tr>
+            <th>{{y.menid}}</th>
+            <th>{{y.menname}}</th>
+            <th>{{y.menroomno}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    <li><a href="{%url 'index'%}">BACK TO HOMEPAGE</a></li>
+</body>
+</html>

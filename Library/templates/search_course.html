@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME TO KPM INDERA MAHKOTA</h1>
+    <strong>SEARCH COURSE</strong><br><br>
+    <form action="" method="get">
+        ENTER COURSE : <input type="text" name="c_code">
+        <input type="submit" value="SEARCH">
+    </form>
+    <br><br>
+
+    <table border="1">
+        <tr>
+            <th>Code</th>
+            <th>Description</th>
+        </tr>
+        
+        <tr>
+            <td>{{ course.code }}</td>
+            <td>{{ course.description }}</td>
+        </tr>
+    </table>
+
+</body>
+</html>

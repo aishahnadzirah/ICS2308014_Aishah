@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+</head>
+<body>
+    <h1>Welcome to database page</h1>
+    <table border="1">
+        {% for x in mybooks %}
+        <tr>
+            <th>Book id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published</th>
+        </tr>
+        <tr>
+            <th>{{ x.book_id }}</th>
+            <th>{{ x.title }}</th>
+            <th>{{ x.author }}</th>
+            <th>{{ x.published_year }}</th>
+        </tr>
+        {% endfor %}
+    <table border="1">
+        {% for y in mystudent %}
+        <tr>
+            <th>Student id</th>
+            <th>Student Name</th>
+            <th>Phone no</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <th>{{ y.student_id }}</th>
+            <th>{{ y.student_name }}</th>
+            <th>{{ y.student_phone }}</th>
+            <th>{{ y.student_email }}</th>
+            <th>{{ y.stud_status}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>In views.py you can see how to import and fetch members from the database</p>
+    <li><a href="{%url 'index'%}">BACK TO HOMEPAGE </a></li>
+</body>
+</html>

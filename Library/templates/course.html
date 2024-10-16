@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kolej Profesional MARA Indera Mahkota</h1>
+    <h2>COURSE</h2>
+    <form action="" method="post">
+        {%csrf_token %}
+        Course Code <input type="text" name="code"><br><br>
+        Description <input type="text" name="desc"><br><br>
+        <input type="submit" value="SAVE"><br><br>
+    </form>
+    <br><br>
+    {{message}}
+
+    <table border="1">
+        {% for y in data %}
+        <tr>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <th>{{ y.code }}</th>
+            <th>{{ y.description }}</th>
+            <th><a href="update_course/{{ y.code }}">Update</a></th>
+            <th><a href="delete_course/{{ y.code }}">Delete</a></th>
+        </tr>
+        {% endfor %}
+</body>
+</html>
